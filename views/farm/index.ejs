@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>All Farms</title>
+    </head>
+    <body>
+        <a href="/farm/new">Add New Farm</a>
+        <h1>All Farms</h1>
+        <ul>
+            <% farms.forEach((farm) => { %>
+                <li><a href="/farms/<%= farm._id %>"><%= farm.name %></a></li>
+            <% }) %>
+        </ul>
+        <a href="/farms">All Farms</a>
+        <br>
+        <a href="/products">All Products</a>
+    </body>
+</html>

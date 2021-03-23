@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>New Farm</title>
+    </head>
+    <body>
+        <h1>Add a Farm</h1>
+        <form action="/farm" method="POST">
+            <div>
+                <label for="name">Farm Name</label>
+                <input type="text" name="name" id="name" placeholder="farm name">
+            </div>
+            <div>
+                <label for="city">City</label>
+                <input type="text" name="city" id="city" placeholder="city name">
+            </div> 
+            <div>
+                <label for="email">Email</label>
+                <input type="text" name="email" id="email" placeholder="email">
+            </div>
+            <button>Submit</button>
+        </form>
+        <a href="/farms">All Farms</a>
+        <br>
+        <a href="/products">All Products</a>
+    </body>
+</html>

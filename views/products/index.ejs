@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title><%= category %> Products</title>
+    </head>
+    <body>
+        <a href="/products/new">Add New Product</a>
+        <br>
+        <a href="/farm/new">Add New Farm</a>
+        <h1><%= category %> Products</h1>
+        <ul>
+            <% products.forEach((product) => { %>
+                <li><a href="/products/<%=product._id%>"><%= product.name %> - <%= product.price %> from "<%= product.farm %>"</a></li>
+            <% }) %>
+        </ul>
+        <% if (category != "All"){%>
+            <a href="/products">All Products</a>
+        <% } %>
+        <a href="/farms">All Farms</a>
+        <br>
+        <a href="/products">All Products</a>
+    </body>
+</html>

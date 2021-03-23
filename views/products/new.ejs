@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>All Products</title>
+    </head>
+    <body>
+        <h1>Add a Product to <%= farm.name %></h1>
+        <form action="/farms//products" method="POST">
+            <label for="name">Product Name</label>
+            <input type="text" name="name" id="name" placeholder="product name">
+            <label for="price">Price</label>
+            <input type="number" id="price" name="price" placeholder="price">
+            <label for="category">Category</label>
+            <select name="category" id="category">
+                <option value="fruit">fruit</option>
+                <option value="vegetable">vegetable</option>
+                <option value="dairy">dairy</option>
+            </select>
+            <button>Submit</button>
+        </form>
+        <a href="/farms">All Farms</a>
+        <br>
+        <a href="/products">All Products</a>
+    </body>
+</html>

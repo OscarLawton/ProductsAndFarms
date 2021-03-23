@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title><%= farm.name %></title>
+    </head>
+    <body>
+        <h1><%= farm.name %></h1>
+        <ul>
+            <li>City: <%= farm.city %></li>
+            <li>email: <%= farm.email %></li>
+        
+        </ul>
+        <h2>Products</h2>
+        <ul>
+            <% for(let product of farm.products) {%>
+                <li><%= product.name %> Price: <%= product.price %></li>
+            <% } %>
+        </ul>
+        <a href="/farms/<%= farm.id %>/products/new">Add New Product</a>
+        <br>
+        <a href="/farms">All Farms</a>
+        <br>
+        <a href="/products">All Products</a>
+    </body>
+</html>
