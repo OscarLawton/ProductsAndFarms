@@ -10,7 +10,7 @@
         <h1><%= category %> Products</h1>
         <ul>
             <% products.forEach((product) => { %>
-                <li><a href="/products/<%=product._id%>"><%= product.name %> - <%= product.price %> from "<%= product.farm %>"</a></li>
+                <li><a href="/products/<%=product._id%>"><%= product.name %> - <%= product.price %> from "<%= product.farm.name %>"</a></li>
             <% }) %>
         </ul>
         <% if (category != "All"){%>

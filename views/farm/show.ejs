@@ -13,7 +13,7 @@
         <h2>Products</h2>
         <ul>
             <% for(let product of farm.products) {%>
-                <li><%= product.name %> Price: <%= product.price %></li>
+                <li><a href="/products/<%= product.id%>"><%= product.name %></a></li>
             <% } %>
         </ul>
         <a href="/farms/<%= farm.id %>/products/new">Add New Product</a>

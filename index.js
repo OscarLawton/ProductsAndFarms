@@ -73,7 +73,7 @@ app.post('/farms/:id/products', async (req, res) => {
 app.get('/products', async (req, res) => {
     const {category} = req.query;
     if(category){
-        const products = await Product.find({ category }).populate('farm');
+        const products = await Product.find({ category }).populate('farm', 'name');
         /* for(var x = 0; x < products.length; x++){
             console.log(products[x])
         } */
@@ -82,12 +82,12 @@ app.get('/products', async (req, res) => {
         })
         res.render('products/index', { products, category });
     } else {
-        const products = await Product.find({}).populate('farm')
+        const products = await Product.find({}).populate('farm', 'name')
         /* for(var x = 0; x < products.length; x++){
             console.log(products[x])
         } */
         for(let product of products){
-            console.log(product.farm)
+            console.log(product.farm.name)
         }
         res.render('products/index', {products, category: "All"});
     }   
@@ -118,7 +118,7 @@ app.put('/products/:id', async (req, res) => {
 
 app.get('/products/:id', async (req, res) => {
     const { id } = req.params;
-    const product = await Product.findById(id)
+    const product = await Product.findById(id).populate('farm', 'name')
     res.render('products/show', { product });
 });
 
